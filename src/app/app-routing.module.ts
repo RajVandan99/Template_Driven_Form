@@ -7,6 +7,7 @@ import { LoginComponent } from './shared/components/login/login.component';
 const routes: Routes = [
   {path: "", component: LoginComponent},
   {path: "home", component: HomeComponent},
+  {path: "student", component: LoginComponent},
   {path: "pageNotFound", component: PageNotFoundComponent},
   {path: "**", redirectTo:"pageNotFound" }
 ];
