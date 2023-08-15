@@ -1,1 +1,56 @@
-<p>login works!</p>
+<div class="main">
+    <form ngForm (ngSubmit)="onSubmit()" #form="ngForm">
+        <h2>Template Driven Form</h2>
+        <div class="form-group">
+            <label for="username">Username <sup class="text-danger"><strong>*</strong></sup></label>
+            <input type="text" name="username" ngModel #username="ngModel" id="username" class="form-control" required>
+            <p class="text-danger"
+            *ngIf="username.touched && username.invalid">Username is mandatory</p>
+        </div>
+        <div class="form-group">
+            <label for="email">Email <sup class="text-danger"><strong>*</strong></sup> </label>
+            <input type="email" name="email" id="email" ngModel #email="ngModel"
+            [pattern]="emailPattern" class="form-control" required>
+            <p class="text-danger" *ngIf="email.invalid && email.touched && !email.dirty">Email id is mandatory</p>
+            <p class="text-danger" *ngIf="email.invalid && email.touched && email.dirty">Please enter valid email id</p>
+        </div>
+        <div class="form-group">
+            <label for="password">Password <sup class="text-danger"><strong>*</strong></sup> </label>
+            <input type="password" name="password" id="password" ngModel #password="ngModel" 
+            [pattern]="passwordPattern" class="form-control" required>
+            <p class="text-danger"
+            *ngIf="password.invalid && password.touched && !password.dirty">Password is mandatory</p>
+            <p class="text-danger"
+            *ngIf="password.invalid && password.touched && password.dirty">Password must have contain at least a number, a lowercase, a uppercase, a special character</p>
+        </div>
+        <div class="form-group">
+            <ng-container *ngFor="let gender of genderArray">
+                <label [for]="gender" class="mr-2">
+                    <input type="radio" [name]="'gender'" ngModel #gender="ngModel" [id]="gender" [value]="gender" required> {{gender}}
+                </label>
+            </ng-container>
+        </div>
+        <div class="form-group">
+            <label for="secreteQuestion">Secrete Questions <sup class="text-danger"><strong>*</strong></sup> </label>
+            <select name="secreteQuestion" id="secreteQuestion" class="form-control" ngModel #secreteQuestion="ngModel" required>
+                <option value="none">---Please Select---</option>
+                <option value="teacher">Your faourite teache name</option>
+                <option value="pet">What is your pet name</option>
+                <option value="mothername">What is your mother name</option>
+                <option value="birthcity">What is your birth city</option>
+            </select>
+            <p class="text-danger"
+            *ngIf="secreteQuestion.invalid && secreteQuestion.touched">Please select secrete question</p>
+        </div>
+        <div class="form-row">
+            <div class="form-group form-check mr-4" *ngFor="let subject of subjectsArray">
+                <label for="subjects">
+                    <input type="checkbox" [name]="'subject'" [id]="'subject'" ngModel #subjects="ngModel" class="form-check-input" required>{{subject}}
+                </label>
+            </div>
+        </div>
+        <div class="text-left">
+            <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Sign Up</button>
+        </div>
+    </form>
+</div>

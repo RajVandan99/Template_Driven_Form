@@ -1,1 +1,71 @@
-<p>home works!</p>
+<div class="main">
+    <form (ngSubmit)="onSubmit(form)" #form="ngForm">
+        <h2>Student sign up</h2>
+        <div class="form-row">
+          <div class="form-group col-md-4">
+            <label for="inputEmail4">First Name <sup><strong>*</strong></sup></label>
+            <input type="email" class="form-control" id="inputEmail4" placeholder="First name">
+          </div>
+          <div class="form-group col-md-4">
+            <label for="inputEmail4">Middle Name</label>
+            <input type="email" class="form-control" id="inputEmail4" placeholder="Middle name">
+          </div>
+          <div class="form-group col-md-4">
+            <label for="inputEmail4">Last Name <sup><strong>*</strong></sup></label>
+            <input type="email" class="form-control" id="inputEmail4" placeholder="Last name">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="inputPassword4">Password</label>
+            <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="inputPassword4">Confirm password</label>
+            <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputAddress">Address 1</label>
+          <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+        </div>
+        <div class="form-group">
+          <label for="inputAddress2">Address 2</label>
+          <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-3">
+                <label for="inputState">Country</label>
+                <select id="inputState" class="form-control">
+                  <option selected>Choose...</option>
+                  <option>...</option>
+                </select>
+            </div>
+          <div class="form-group col-md-3">
+            <label for="inputState">State</label>
+            <select id="inputState" class="form-control">
+              <option selected>Choose...</option>
+              <option>...</option>
+            </select>
+          </div>
+          <div class="form-group col-md-3">
+            <label for="inputState">City</label>
+            <select id="inputState" class="form-control">
+              <option selected>Choose...</option>
+              <option>...</option>
+            </select>
+          </div>
+          <div class="form-group col-md-3">
+            <label for="inputZip">Pin code</label>
+            <input type="text" class="form-control" id="inputZip">
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="gridCheck">
+            <label class="form-check-label" for="gridCheck">
+              Check me out
+            </label>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Sign up</button>
+    </form>
+</div>
